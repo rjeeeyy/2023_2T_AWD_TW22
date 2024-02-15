@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #fdfdfd, #222223);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+.day-button:hover {
+    padding: 20px;
+    width: 170px;
+}
+
+#animated-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.animated-box {
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    opacity: 0;
+    background-color: transparent;
+    transition: transform 0.5s, background-color 0.5s, opacity 0.5s;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.day-button {
+    display: block;
+    padding: 10px;
+    width: 150px;
+    margin: 20px;
+    margin-left: 100px;
+    cursor: pointer;
+    transition: padding 0.5s, width 0.5s, background-color 0.5s;
+}
+
+
+
+@keyframes retractToTop {
+    0% {
+        transform: translate(-50%,-50%);
+        opacity: 1;
+        border: 10px solid;
+        border-color: var(--target-color);
+        background-color: var(--target-color);
+    }
+    100% {
+        transform: translate(-50%, -200%);
+        opacity: 1;
+        border: 10px solid;
+        border-color: var(--target-color);
+    }
+}
+
+@keyframes appearFromTop {
+    0% {
+        transform: translate(-50%, -200%);
+        opacity: 1; 
+        border: 10px solid;
+        border-color: var(--target-color);
+    }
+    100% {
+        transform: translate(-50%,-50%);
+        opacity: 1;
+        background-color: transparent;
+        border: 10px solid;
+        border-color: var(--target-color);
+    }
+}
